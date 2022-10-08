@@ -2,21 +2,25 @@
 using namespace std;
 
 class Printer {
-private:
+ 
 
 public:
-
+	void rint() {
+		cout << "Printer - Asus" << endl;
+	}
 };
 
 class Klava {
-private:
+ 
 	 
 public:
-
+	void klav() {
+		cout << "Klava - Koka" << endl;
+	}
 };
 
 
-class PC {
+class PC {//компо3иция,обьекты привя3аны дрyг к дрyгy. 
 private:
 	class HDD {
 	public: 
@@ -48,6 +52,8 @@ private:
 	RAM raam;
 	videoram vsideom;
 	CPU cpu;
+	Klava klv;
+	Printer prnt;
 
 public:
 
@@ -59,7 +65,10 @@ public:
 		vsideom.videom();
 		cpu.cu();
 	}
-
+	void klvrnt() {
+		  klv.klav();
+		  prnt.rint();
+	 }
 
 
 };
@@ -68,6 +77,6 @@ int main() {
 
 
 	PC pc1;
-	pc1.pc();
-
+	pc1.pc();//компо3иция
+	pc1.klvrnt();//агрегация
 }
